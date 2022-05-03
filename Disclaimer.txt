@@ -1,0 +1,8 @@
+This project was produced by:
+
+Matthew Senick, 1008220676, matthew.senick@mail.utoronto.ca
+Samuel Schwartzbein, 1008615820, sam.schwartzbein@mail.utoronto.ca
+
+For the fulfillment of the Term Project component of ECO2460 at the University of Toronto.
+Credit is given equally to both authors and all code contained within is equally attributed.
+All data found within may not be shared and is proprietary of the Wall Street Journal publication.
