@@ -16,13 +16,35 @@ In this stage, we gather the necessary data for our resulting analyses. Initiall
 
 Having collected article contents, we are then tasked with cleaning the data. We follow almost exactly the same cleaning steps as Bybee et al. except for only being able to drop articles based on keywords and not by the articles section. Once cleaned, we have a tokenized Bag-of-Words model of each article in the database, which is fed to a Gensim LDA topic model to represent and cluster tokens and themes in the article texts. Alongside this, we generated a sentiment score of -1 or 1 for each article by analyzing the first 5 sentences of the article for negative and positive articles respectively using the RoBERTa sentient transformer. Given these items, we are ready to generate a day-to-day sentiment-weight time series dataset of topic attention featuring the pre-selected number of topic. We do this by summing normalized per-topic attention for all articles in a given day and introducing article sentiment as a multiplicative constant to a given article. A highly positive value for a given day means that this topic was very important and also very positive during the day and vice versa. 
 
+![LDA Model Ranking](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/LDA_Model_Ranking.PNG?raw=true)
+
+*Comparative Performance of LDA Models with respect to coherence and perplexity scores*
+
+![Sentiment Weighted Attention for Financial Crisis](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/Weight_Attn_ex.PNG?raw=true)
+
+*Daily-Aggregate Sentiment-Weihted Attention for 'Financial Crisis'*
+
 ### Analysis
 
 First off, as a check for bias, we created a Naive Bayesian model to predict article authorship from verbiage of a given article. As shown by the results, bias may be a problem, but when taking a closer look at the most important predicitive words, this concern disappears as they are typically content type words rather than words of heavy sentimental value.
 
+![Authorship Bias](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/Author_Bias_2.PNG?raw=true)
+
+*Classification rate of authorship vs. Number of most prolific authors considered*
+
 Now that we have created our sentiment-weighted topic attention predictors, we introduce numerous different market fluctuation indicators. However, in our analyses, of most importance was the Market Volatility indicator from FRED. By introducing sentiment to the model, we were able to observe slightly better in-sample and out-of-sample R^2 and MSE than the original paper by Bybeeet al. 
+
+![Sentiment Prediction In-Sample](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/sent_only_in_new.PNG?raw=true)
+
+*In-sample FRED Market Fluctuation metric prediction using sentiment-weighted attention*
+
+![Sentiment Prediction Out-Sample](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/sent_only_out_new.PNG?raw=true)
+
+*Out-of-sample FRED Market Fluctuation metric prediction using sentiment-weighted attention*
 
 As a check, we also analyzed the sentiment polarity of all topics. As observed, we can easily pick out which topics were important for swaying negative market fluctuation movements and which were important for influencing positive market fluctuation movements. 
 
+![Sentiment Polarity for Topics](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/sent_polar.PNG?raw=true)
 
+*Sentiment Polarity of all considered topics*
 
