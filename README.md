@@ -34,17 +34,20 @@ First off, as a check for bias, we created a Naive Bayesian model to predict art
 
 Now that we have created our sentiment-weighted topic attention predictors, we introduce numerous different market fluctuation indicators. However, in our analyses, of most importance was the Market Volatility indicator from FRED. By introducing sentiment to the model, we were able to observe slightly better in-sample and out-of-sample R^2 and MSE than the original paper by Bybeeet al. 
 
-![Sentiment Prediction In-Sample](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/sent_only_in_new.PNG?raw=true)
+![Sentiment Prediction In-Sample](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/sent_only_in_new.png?raw=true)
 
 *In-sample FRED Market Fluctuation metric prediction using sentiment-weighted attention*
 
-![Sentiment Prediction Out-Sample](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/sent_only_out_new.PNG?raw=true)
+![Sentiment Prediction Out-Sample](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/sent_only_out_new.png?raw=true)
 
 *Out-of-sample FRED Market Fluctuation metric prediction using sentiment-weighted attention*
 
 As a check, we also analyzed the sentiment polarity of all topics. As observed, we can easily pick out which topics were important for swaying negative market fluctuation movements and which were important for influencing positive market fluctuation movements. 
 
-![Sentiment Polarity for Topics](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/sent_polar.PNG?raw=true)
+![Sentiment Polarity for Topics](https://github.com/Matts52/Bearish-or-Bullish/blob/main/assets/sent_polar.png?raw=true)
 
 *Sentiment Polarity of all considered topics*
 
+### Conclusion
+
+This pesudo-replication and extension project was great for learning the full life-cycle of a machine learning model which is mostly concerned with analysis of an indicator. Having a multistage scraper taught me how scrapers should interact with each other and how they could potentially divide work in parallel. Cleaning and prepping the data made me aware of just how much work goes into language modelling and predicting as well as the amount of computational resources required. Lastly, the analysis portion tested my ability to come up with a usable, yet interpretable model of the desired relationship. Writing this paper has been a great point of learning that I am proud of and hopefully can be used as a baseline for my exploration of Natural Language Processing. 
