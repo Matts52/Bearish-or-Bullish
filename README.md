@@ -2,7 +2,7 @@
 
 *Disclaimer: All code within is equally attributed to my paper partner and all website links for scraping as well as file import links are redacted to protect the privacy of the owners*
 
-Read the paper [here](https://www.matthewsenick.com/Bearish_or_Bullish.pdf)
+Read the paper [here](https://Matts52.github.io/assets/papers/Bearish_or_Bullish.pdf)
 
 ### Overview
 
